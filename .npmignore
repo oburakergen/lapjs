@@ -1,0 +1,11 @@
+*
+
+!/base.js
+!/index.js
+!/lib/**/*
+
+!/package.json
+
+!/CHANGELOG.md
+!/LICENCE
+!/README.md

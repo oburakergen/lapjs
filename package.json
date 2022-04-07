@@ -1,33 +1,45 @@
 {
   "name": "lapjs",
-  "version": "1.0.1",
   "description": "Laraplay js",
-  "main": "src/app.js",
+  "license": "MIT",
+  "author": "Burak ERGEN <burak.ergen@laraplay.com>",
+  "main": "src/app.ts",
   "scripts": {
     "start": "webpack-dev-server --config webpack-development.config.js --open",
     "build": "webpack --config webpack.production.config.js",
-    "lint:js": "eslint --ext .js --ignore-path .gitignore .",
-    "lint": "npm run lint:js"
-  },
-  "keywords": [
-    "laraplay",
-    "javascript"
-  ],
-  "author": "Burak ERGEN",
-  "license": "MIT",
-  "devDependencies": {
-    "eslint": "^7.20.0",
-    "html-webpack-plugin": "^5.2.0",
-    "javascript-obfuscator": "^2.19.0",
-    "prettier": "2.2.1",
-    "webpack": "^5.0.0-rc.3",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.7.3",
-    "webpack-obfuscator": "^3.4.1"
+    "pre-commit": "lint-staged",
+    "format": "run-s format:package format:prettier format:eslint",
+    "format:eslint": "eslint --fix ./ >/dev/null 2>&1 || true",
+    "format:package": "prettier-package-json --write",
+    "format:prettier": "prettier --write \"**/*.{js,json,md,yml}\" \".editorconfig\" \"LICENSE\"",
+    "lint": "eslint ./",
+    "validate": "npm run lint"
   },
   "dependencies": {
-    "crypto-browserify": "^3.12.0",
-    "web-push": "^3.4.5"
+    "eslint-config-airbnb-base": "^15.0.0"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-plugin-import": "^2.25.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5.15.0",
+    "@typescript-eslint/parser": "5.15.0",
+    "doctoc": "2.1.0",
+    "eslint": "8.11.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.25.4",
+    "html-webpack-plugin": "^5.5.0",
+    "lint-staged": "12.3.7",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.6.0",
+    "prettier-package-json": "2.6.3",
+    "typescript": "4.6.2",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1",
+    "webpack-merge": "^5.8.0"
   }
 }
