@@ -1,22 +1,23 @@
 {
   "name": "lapjs",
-  "description": "Laraplay js",
+  "description": "Lapjs | Ad Engine",
   "license": "MIT",
   "author": "Burak ERGEN <burak.ergen@laraplay.com>",
   "main": "src/app.ts",
   "scripts": {
-    "start": "webpack-dev-server --config webpack-development.config.js --open",
-    "build": "webpack --config webpack.production.config.js",
-    "pre-commit": "lint-staged",
     "format": "run-s format:package format:prettier format:eslint",
     "format:eslint": "eslint --fix ./ >/dev/null 2>&1 || true",
     "format:package": "prettier-package-json --write",
     "format:prettier": "prettier --write \"**/*.{js,json,md,yml}\" \".editorconfig\" \"LICENSE\"",
     "lint": "eslint ./",
+    "serve": "webpack-dev-server --config webpack.config.js --open",
+    "build": "webpack",
     "validate": "npm run lint"
   },
   "dependencies": {
-    "eslint-config-airbnb-base": "^15.0.0"
+    "eslint-config-airbnb-base": "^15.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack-merge": "^5.8.0"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.13.0",
@@ -31,15 +32,14 @@
     "eslint": "8.11.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.25.4",
-    "html-webpack-plugin": "^5.5.0",
     "lint-staged": "12.3.7",
     "npm-run-all": "4.1.5",
     "prettier": "2.6.0",
     "prettier-package-json": "2.6.3",
-    "typescript": "4.6.2",
+    "ts-loader": "^9.2.8",
+    "typescript": "^4.6.2",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.8.1",
-    "webpack-merge": "^5.8.0"
+    "webpack-dev-server": "^4.8.1"
   }
 }

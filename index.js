@@ -11,9 +11,5 @@ module.exports = {
       },
     },
   },
-  rules: {
-    // Append 'tsx' to Airbnb 'react/jsx-filename-extension' rule
-    // Original: ['.jsx']
-    'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
-  },
+  rules: {},
 };
