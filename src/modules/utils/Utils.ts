@@ -1,16 +1,15 @@
 import { UtilService } from './UtilService';
 
-export class Utils implements UtilService {
-  private static protocol = window.location.protocol;
+export class Utils <T extends UtilService<T>> {
+  private readonly protocol = window.location.protocol;
 
-  private static host = window.location.host;
+  private readonly host = window.location.host;
 
-  private static pathname = window.location.pathname;
+  private readonly pathname = window.location.pathname;
 
-  private static url = `${this.protocol}//${this.host}${this.pathname}`;
+  private readonly url = `${this.protocol}//${this.host}${this.pathname}`;
 
-  private static href = window.location.href;
-
+  private readonly href = window.location.href;
   /**
    * Check objects is include data
    * @public

@@ -1,9 +1,10 @@
-export interface UtilService {
+
+export interface UtilService<T> {
   hasOwn(objects: object, data: string): Boolean;
-  isFalse(data: any): Boolean;
-  isObject(data: any): Boolean;
-  isString(data: any): Boolean;
-  isNumber(data: any): Boolean;
+  isFalse(data: T): Boolean;
+  isObject(data: T): Boolean;
+  isString(data: T): Boolean;
+  isNumber(data: T): Boolean;
   isUndefined(data: any): Boolean;
   isNAN(data: any): Boolean;
   isFunction(data: any): Boolean;

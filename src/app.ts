@@ -1,9 +1,17 @@
+import { Utils } from './modules/utils/Utils';
 
-// Development Stage Check V1
-// declare global {
-//   interface Window {
-//     Lap: object;
-//   }
-// }
-//
-// window.Lap = window.Lap || {};
+declare global {
+  interface Window {
+    Lap: object;
+  }
+}
+
+class Lap {
+  public readonly version = '@VERSION';
+
+  public utility(): object {
+    return new Utils();
+  }
+}
+
+window.Lap = new Lap();
